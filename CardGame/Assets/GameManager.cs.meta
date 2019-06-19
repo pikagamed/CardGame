@@ -3,7 +3,17 @@ guid: 8c8cc7f1ef9d67247a8b7ecdff5f2e9f
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Image0: {instanceID: 0}
+  - Image1: {instanceID: 0}
+  - Image2: {instanceID: 0}
+  - Image3: {instanceID: 0}
+  - Image4: {instanceID: 0}
+  - Image5: {instanceID: 0}
+  - Image6: {instanceID: 0}
+  - Image7: {instanceID: 0}
+  - Image8: {instanceID: 0}
+  - Image9: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
