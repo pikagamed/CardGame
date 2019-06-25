@@ -8,6 +8,10 @@ public class FifteenManager : MonoBehaviour
 
     public Cards[] cardPlayer = new Cards[2];
     public Cards[] cardEnemy = new Cards[2];
+
+    //public Cards cardPlayer0, cardPlayer1;
+    //public Cards cardEnemy0, cardEnemy1;
+
     //public Sprite Image0, Image1, Image2, Image3, Image4,
     //                    Image5, Image6, Image7, Image8, Image9;
 
@@ -58,28 +62,31 @@ public class FifteenManager : MonoBehaviour
                 cardPlayer[1] = new Cards(rPlayer, -3, images[rPlayer], "PlayerCard1");
                 cardEnemy[1] = new Cards(rEnemy, 3, images[rEnemy], "EnemyCard1");
 
-                playerCount.text = (cardPlayer[0].number + cardPlayer[1].number).ToString();
-                enemyCount.text = (cardEnemy[0].number + cardEnemy[1].number).ToString();
+                int playerTotal = cardPlayer[0].number + cardPlayer[1].number;
+                int enemyTotal = cardEnemy[0].number + cardEnemy[1].number;
 
-                if (cardPlayer[0].number + cardPlayer[1].number > 15)
+                playerCount.text = playerTotal.ToString();
+                enemyCount.text = enemyTotal.ToString();
+
+                if (playerTotal > 15)
                     playerCount.color = Color.red;
-                if (cardEnemy[0].number + cardEnemy[1].number > 15)
+                if (enemyTotal > 15)
                     enemyCount.color = Color.red;
 
                 //勝負判定
-                if (cardPlayer[0].number + cardPlayer[1].number > 15 && cardEnemy[0].number + cardEnemy[1].number > 15)
+                if (playerTotal > 15 && enemyTotal > 15)
                 {
                     //兩家都爆
                     resultText.text = "DRAW";
                     resultText.color = Color.green;
                 }
-                else if (cardPlayer[0].number + cardPlayer[1].number > 15)
+                else if (playerTotal > 15)
                 {
                     //玩家爆
                     resultText.text = "LOSE...";
                     resultText.color = Color.blue;
                 }
-                else if (cardEnemy[0].number + cardEnemy[1].number > 15)
+                else if (enemyTotal > 15)
                 {
                     //電腦爆
                     resultText.text = "WIN";
@@ -87,12 +94,12 @@ public class FifteenManager : MonoBehaviour
                 }
                 else
                 {
-                    if (cardPlayer[0].number + cardPlayer[1].number > cardEnemy[0].number + cardEnemy[1].number)
+                    if (playerTotal > enemyTotal)
                     {
                         resultText.text = "WIN";
                         resultText.color = Color.red;
                     }
-                    else if (cardPlayer[0].number + cardPlayer[1].number < cardEnemy[0].number + cardEnemy[1].number)
+                    else if (playerTotal < enemyTotal)
                     {
                         resultText.text = "LOSE...";
                         resultText.color = Color.blue;
