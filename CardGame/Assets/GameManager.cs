@@ -22,8 +22,8 @@ public class GameManager : MonoBehaviour
         rPlayer = Random.Range(0, 10);
         rEnemy = Random.Range(0, 10);
 
-        cardPlayer = new Cards(rPlayer, -5, images[rPlayer]);
-        cardEnemy = new Cards(rEnemy, 5, images[rEnemy]);
+        cardPlayer = new Cards(rPlayer, -5, images[rPlayer], "PlayerCard");
+        cardEnemy = new Cards(rEnemy, 5, images[rEnemy], "EnemyCard");
 
         //判斷式 IF
         //一行判斷式  ? :
@@ -45,8 +45,7 @@ public class GameManager : MonoBehaviour
             resultText.color = Color.green;
         }
 
-        StartCoroutine(WaitSecond(2));
-        resetText.characterSize = 0.1f;
+        resetText.color = Color.white;
     }
 
     //更新事件：每幀執行一次(60Hz)
@@ -62,8 +61,4 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    IEnumerator WaitSecond(float waitTime)
-    {
-        yield return new WaitForSeconds(waitTime);
-    }
 }
