@@ -9,8 +9,8 @@ public class FifteenManager : MonoBehaviour
     public Cards[] cardPlayer = new Cards[2];
     public Cards[] cardEnemy = new Cards[2];
 
-    //public Cards cardPlayer0, cardPlayer1;
-    //public Cards cardEnemy0, cardEnemy1;
+    public Cards cardPlayer0, cardPlayer1;
+    public Cards cardEnemy0, cardEnemy1;
 
     //public Sprite Image0, Image1, Image2, Image3, Image4,
     //                    Image5, Image6, Image7, Image8, Image9;
@@ -30,10 +30,10 @@ public class FifteenManager : MonoBehaviour
         int rPlayer, rEnemy;
         rPlayer = Random.Range(0, 10);
         rEnemy = Random.Range(0, 10);
-        cardPlayer[0] = new Cards(rPlayer, -7, images[rPlayer], "PlayerCard0");
-        cardEnemy[0]= new Cards(rEnemy, 7, images[rEnemy], "EnemyCard0");
-        playerCount.text = (cardPlayer[0].number).ToString();
-        enemyCount.text = (cardEnemy[0].number).ToString();
+        cardPlayer0 = new Cards(rPlayer, -7, images[rPlayer], "PlayerCard0");
+        cardEnemy0= new Cards(rEnemy, 7, images[rEnemy], "EnemyCard0");
+        playerCount.text = (cardPlayer0.number).ToString();
+        enemyCount.text = (cardEnemy0.number).ToString();
     }
 
     //更新事件：每幀執行一次(60Hz)
@@ -59,11 +59,11 @@ public class FifteenManager : MonoBehaviour
                 rPlayer = Random.Range(0, 10);
                 rEnemy = Random.Range(0, 10);
 
-                cardPlayer[1] = new Cards(rPlayer, -3, images[rPlayer], "PlayerCard1");
-                cardEnemy[1] = new Cards(rEnemy, 3, images[rEnemy], "EnemyCard1");
+                cardPlayer0 = new Cards(rPlayer, -3, images[rPlayer], "PlayerCard1");
+                cardEnemy0 = new Cards(rEnemy, 3, images[rEnemy], "EnemyCard1");
 
-                int playerTotal = cardPlayer[0].number + cardPlayer[1].number;
-                int enemyTotal = cardEnemy[0].number + cardEnemy[1].number;
+                int playerTotal = cardPlayer0.number + cardPlayer1.number;
+                int enemyTotal = cardEnemy0.number + cardEnemy1.number;
 
                 playerCount.text = playerTotal.ToString();
                 enemyCount.text = enemyTotal.ToString();
