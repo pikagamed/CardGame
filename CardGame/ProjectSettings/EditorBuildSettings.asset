@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/CardGame.unity
     guid: db4e3672ce3eb984da573e16129aac86
+  - enabled: 1
+    path: Assets/FifteenPoint.unity
+    guid: 40ea1cb970a90ab47b516097a6b3d9fd
   m_configObjects: {}
