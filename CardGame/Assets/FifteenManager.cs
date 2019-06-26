@@ -59,8 +59,8 @@ public class FifteenManager : MonoBehaviour
                 rPlayer = Random.Range(0, 10);
                 rEnemy = Random.Range(0, 10);
 
-                cardPlayer0 = new Cards(rPlayer, -3, images[rPlayer], "PlayerCard1");
-                cardEnemy0 = new Cards(rEnemy, 3, images[rEnemy], "EnemyCard1");
+                cardPlayer1 = new Cards(rPlayer, -3, images[rPlayer], "PlayerCard1");
+                cardEnemy1 = new Cards(rEnemy, 3, images[rEnemy], "EnemyCard1");
 
                 int playerTotal = cardPlayer0.number + cardPlayer1.number;
                 int enemyTotal = cardEnemy0.number + cardEnemy1.number;
